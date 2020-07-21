@@ -1,0 +1,30 @@
+body,div,p,span,ul,li,dl,dt,dd,a,ol,input,button,img,h1,h2,h3,h4,h5,h6{ padding:0; margin:0; list-style:none; border:0;}
+body{ font-family:'Microsoft Yahei';font-size:12px; background:#fff;color:#333;-webkit-overflow-scrolling: touch;}
+ h1,h2,h3,h4,h5,h6 {
+  font-weight: normal;
+}
+input, textarea, button, select {
+    resize: none;
+    font-size: 14px;
+    background: #fff;
+    font-family: "Microsoft YaHei";
+}
+
+a{ color:#333333; text-decoration:none;}
+body,input,button{font-family:'Microsoft Yahei';}
+.clearfix::before,
+.clearfix::after{
+    content: ".";
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    clear: both;
+}
+.f_left{
+    float: left;
+}
+.f_right{
+    float: right;
+}
+

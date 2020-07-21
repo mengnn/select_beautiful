@@ -1,0 +1,47 @@
+html,body{
+  width: 100%;
+  min-height: 100%;
+  overflow:hidden;
+  -webkit-overflow-scrolling:touch;
+  background: #FFFFFF;
+  max-width: 750px;
+  margin:0 auto;
+}
+.mainBox,.contentBox{
+  width: 100%;
+  overflow:hidden;
+}
+.contentBox{
+  height: calc(100vh - 50px);
+  overflow-y: auto;
+}
+.tabselectBox{
+  width: 100%;
+  height: 40px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.selectbL{
+  float: left;
+  width: 50%;
+  height: 100%;
+  text-align:center;
+}
+.selectbL select{
+  border:0;
+  outline-style: none;
+  vertical-align: top;
+  margin-top: 10px;
+}
+.select-xi{
+  width: 100%;
+  height: 100%;
+  line-height: 40px;
+}
+.selectImg{
+  width: 25px;
+  margin-left: 1px;
+  vertical-align: top;
+  margin-top: 6.5px;
+}
+

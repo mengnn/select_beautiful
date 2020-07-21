@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>活动</title>
+    <!-- 设置 viewport -->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <!-- IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 兼容国产浏览器的高速模式 -->
+    <meta name="renderer" content="webkit">
+    <meta name="Author" content="fans" />
+    <meta name="Keywords" content="" />
+    <meta name="Description" content="" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <style type="text/css">
+        h2{
+          margin:20px;
+        }
+        body,html{
+          width: 100%;
+          height: 100%;
+        }
+      .mainBox,.contentBox{
+        width: 100%;
+        height: 100%;
+      }
+      .selectMain{
+        border-radius: 5px;
+        height: 35px;
+        position: relative;
+        border:1px solid #ddd;
+        display: inline-block;
+        padding:0 10px;
+        margin:15px;
+      }
+      .selectBox{
+         width: 100%;
+         height: 35px;
+         line-height: 35px;
+         text-align: center;
+      }
+      .selectBox span{
+        font-size: 14px;
+        color: #333;
+      }
+      .selectImg {
+          width: 25px;
+          margin-left: 1px;
+          vertical-align: top;
+          margin-top: 6.5px;
+      }
+      .selectUl{
+        width: 120px;
+        position: absolute;
+        top: 38px;
+        left:0;
+        overflow-y: auto;
+        max-height: 179px;
+        background: #f5f5f5;
+        border:1px solid #ddd;
+        z-index: 1;
+      }
+      .selectUl li{
+        width: 90%;
+        padding:8px 5%;
+        border-bottom: 1px solid #ddd;
+        font-size: 14px;
+      }
+      .selectUl li:last-child{
+        border:0;
+      }
+
+   /*****************/
+
+      .selectModule{
+        width: 100%;
+        height: 100%;
+        background:rgba(0,0,0,0.6);
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+      .selectMul{
+        width: 70%;
+        max-width: 300px;
+        overflow-y: auto;
+        max-height: 250px;
+        background:#fff;
+        border:1px solid #ddd;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border-radius: 5px;
+        transform: translate(-50%,-50%);
+      }
+      .selectMul>li{
+        width: 90%;
+        padding:8px 5%;
+        border-bottom: 1px solid #ddd;
+        font-size: 14px;
+      }
+      .selectMul>li:last-child{
+        border:0;
+      }
+    </style>
+
+</head>
+<body>
+<div class="mainBox">
+   <div class="contentBox">
+     <h2>选项方式一</h2>
+      <div class="selectMain">
+        <div class="selectBox" onclick="selectF(this,event)">
+            <span>地点</span>
+            <img src="images/selectImg.png" class="selectImg" />
+        </div>
+        <ul class="selectUl" style="display: none;">
+          <li vid="1" onclick="selectChange(this)">上海</li>
+          <li vid="0" onclick="selectChange(this)">北京</li>
+          <li vid="2" onclick="selectChange(this)">成都</li>
+          <li vid="3" onclick="selectChange(this)">重庆</li>
+        </ul>
+      </div>
+
+      <div class="selectMain">
+        <div class="selectBox" onclick="selectF(this,event)">
+            <span>时间</span>
+            <img src="images/selectImg.png" class="selectImg" />
+        </div>
+        <ul class="selectUl" style="display: none;">
+          <li vid="1" onclick="selectChange(this)">20200708</li>
+          <li vid="0" onclick="selectChange(this)">20200709</li>
+          <li vid="2" onclick="selectChange(this)">20200710</li>
+          <li vid="3" onclick="selectChange(this)">20200711</li>
+        </ul>
+      </div>
+
+      <h2>选项方式二</h2>
+      <div class="selectMain">
+        <div class="selectBox" onclick="selectMF(this,event)">
+            <span>地点</span>
+            <img src="images/selectImg.png" class="selectImg" />
+        </div>
+        <!-- module -->
+
+        <div class="selectModule" style="display: none;">
+          <ul class="selectMul">
+            <li vid="1" onclick="selectMChange(this)">上海</li>
+            <li vid="0" onclick="selectMChange(this)">北京</li>
+            <li vid="2" onclick="selectMChange(this)">成都</li>
+            <li vid="3" onclick="selectMChange(this)">重庆</li>
+          </ul>
+        </div>
+
+
+      </div>
+
+   </div>
+
+</div>
+
+
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+
+<script type="text/javascript">
+   //调出选项框
+   function selectF(obj,event){
+     // event.stopPropagation();
+     $(obj).parent().find(".selectUl").show();
+     event.stopPropagation();
+   }
+   //回显选项
+   function selectChange(obj){
+      var thisVal = $(obj).text();
+      // console.log(thisVal)
+      $(obj).parent().parent().find(".selectBox").find("span").html(thisVal);
+      $(obj).parent().hide();
+   }
+   //点击空白取消
+   $("body,html").click(function(){
+     $(".selectUl").hide();
+   })
+
+
+    //调出选项框
+   function selectMF(obj,event){
+     // event.stopPropagation();
+     $(obj).parent().parent().find(".selectModule").show();
+     event.stopPropagation();
+   }
+   //回显选项
+   function selectMChange(obj){
+      var thisVal = $(obj).text();
+      // console.log(thisVal)
+      $(obj).parent().parent().parent().find(".selectBox").find("span").html(thisVal);
+      $(obj).parent().parent().hide();
+   }
+   //点击空白取消
+   $(".selectModule").click(function(){
+     $(this).hide();
+   })
+</script>
+</body>
+</html>

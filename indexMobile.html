@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>活动</title>
+    <!-- 设置 viewport -->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <!-- IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 兼容国产浏览器的高速模式 -->
+    <meta name="renderer" content="webkit">
+    <meta name="Author" content="fans" />
+    <meta name="Keywords" content="" />
+    <meta name="Description" content="" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <!-- select -->
+    <link rel="stylesheet" type="text/css" href="select/css/style.mobile.css" />
+    <link rel="stylesheet" type="text/css" href="select/css/swiper.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+
+</head>
+<body>
+<div class="mainBox">
+   <div class="contentBox">
+      <div class="tabselectBox">
+        <div class="selectbL">
+          <div class="select-xi sele-bp">
+              <span>时间</span>
+              <img src="images/selectImg.png" class="selectImg" />
+          </div>
+          <div class="display-none">
+            <div vid="1">2020年10月10日</div>
+            <div vid="0">2020年10月11日</div>
+            <div vid="2">2020年10月12日</div>
+            <div vid="3">2020年10月13日</div>
+          </div>
+        </div>
+        <div class="selectbL">
+           <div class="select-xi sele-bp">
+              <span>地点</span>
+              <img src="images/selectImg.png" class="selectImg" />
+          </div>
+          <div class="display-none">
+            <div vid="1">上海</div>
+            <div vid="0">北京</div>
+            <div vid="2">武汉</div>
+            <div vid="3">江苏</div>
+          </div>
+        </div>
+      </div>
+
+   </div>
+
+</div>
+
+
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<!-- select -->
+<script type="text/javascript" src="select/js/swiper.min.js"></script>
+<script type="text/javascript" src="select/js/hSdrop.js"></script>
+
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+  //初始化
+  new hSdrop({
+      els:'.sele-bp'
+  })
+</script>
+</body>
+</html>
